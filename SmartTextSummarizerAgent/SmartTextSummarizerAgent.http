@@ -1,0 +1,6 @@
+@SmartTextSummarizerAgent_HostAddress = http://localhost:5260
+
+GET {{SmartTextSummarizerAgent_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
