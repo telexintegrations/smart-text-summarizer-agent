@@ -1,0 +1,63 @@
+{
+  "data": {
+    "date": {
+      "created_at": "2025-02-18",
+      "updated_at": "2025-02-18"
+    },
+    "descriptions": {
+      "app_description": "Smart Text Summarization Agent for Telex. This integration leverages AI to summarize long text or messages, making it easier for users to extract key insights quickly.",
+      "app_logo": "https://example.com/summarizer-logo.png",
+      "app_name": "Smart Text Summarizer",
+      "app_url": "https://example.com/smart-text-summarizer",
+      "background_color": "#3498db"
+    },
+    "integration_category": "AI & Automation",
+    "integration_type": "modifier",
+    "is_active": true,
+    "key_features": [
+      "Uses AI to summarize long messages or documents in seconds.",
+      "Allows customization of summary length (short, medium, or detailed).",
+      "Supports multiple languages for summarization.",
+      "Can extract key points, highlights, or an executive summary."
+    ],
+    "permissions": {
+      "summarization_agent": {
+        "always_online": true,
+        "display_name": "AI Summarizer"
+      }
+    },
+    "settings": [
+      {
+        "label": "summary_length",
+        "type": "dropdown",
+        "description": "Select the preferred summary length.",
+        "options": [ "short", "medium", "detailed" ],
+        "default": "medium",
+        "required": true
+      },
+      {
+        "label": "language",
+        "type": "dropdown",
+        "description": "Choose the language for summarization.",
+        "options": [ "English", "French", "Spanish", "German" ],
+        "default": "English",
+        "required": true
+      },
+      {
+        "label": "include_keywords",
+        "type": "checkbox",
+        "description": "Include key terms extracted from the text in the summary.",
+        "default": true
+      },
+      {
+        "label": "summary_format",
+        "type": "dropdown",
+        "description": "Choose the format for the summary output.",
+        "options": [ "bullet_points", "paragraph" ],
+        "default": "paragraph",
+        "required": true
+      }
+    ],
+    "target_url": "https://smart-text-summarizer.onrender.com/api/v1/telex-text-summarizer/process-message"
+  }
+}
