@@ -21,7 +21,7 @@ namespace SmartTextSummarizerAgent.Controllers
         /// </summary>
         [HttpPost]
         [ProducesResponseType(typeof(TextResponseDto), StatusCodes.Status200OK)]
-        public async Task<ActionResult<TextResponseDto>> EnterText([FromBody] TextRequestDto textRequestDto)
+        public async Task<ActionResult<TextResponseDto>> EnterText([FromBody] SummarizeRequestDto textRequestDto)
         {
             string? summarizedText = await aiService.SummarizeText(textRequestDto.Text);
 
