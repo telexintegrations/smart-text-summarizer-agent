@@ -1,11 +1,18 @@
-﻿using SmartTextSummarizerAgent.IServices;
+﻿        using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+using SmartTextSummarizerAgent.IServices;
+using System.Text;
 using System.Text.Json;
+using Microsoft.Extensions.Options;
+using SmartTextSummarizerAgent.Helpers;
 
 namespace SmartTextSummarizerAgent.Services
 {
     public class TelexIntegrationService : ITelexIntegrationService
     {
         private string _configurationFilePath = Path.Combine(Directory.GetCurrentDirectory(), "integration.json");
+       
 
         public string LoadIntegration()
         {
@@ -19,5 +26,10 @@ namespace SmartTextSummarizerAgent.Services
             return JsonSerializer.Serialize(doc.RootElement);
 
         }
+
+
+
     }
+
 }
+
