@@ -28,5 +28,17 @@ namespace SmartTextSummarizerAgent.Controllers
 
             return Ok(integrationJson);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> PostIntegrationConfig([FromBody] string text)
+        {
+            var jsonResponse = await _loader.SummarizeText(text);
+
+            if (jsonResponse == null)
+            {
+                return BadRequest(jsonResponse);
+            }
+            return Ok(jsonResponse);
+        }
     }
 }
