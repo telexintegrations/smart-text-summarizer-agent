@@ -1,3 +1,4 @@
+using SmartTextSummarizerAgent.Helpers;
 using SmartTextSummarizerAgent.IServices;
 using SmartTextSummarizerAgent.Services;
 
@@ -10,6 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IAIService, AIService>();
+
+builder.Services.Configure<GeminiSettings>(builder.Configuration.GetSection("GeminiSettings"));
 
 builder.Services.AddScoped<ITelexIntegrationService, TelexIntegrationService>();
 

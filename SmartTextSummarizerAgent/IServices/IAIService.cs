@@ -2,6 +2,6 @@
 {
     public interface IAIService
     {
-        Task<string?> SummarizeText(string text);
+        Task<string> SummarizeText(string text);
     }
 }
