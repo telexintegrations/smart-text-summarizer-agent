@@ -11,14 +11,14 @@ namespace SmartTextSummarizerAgent.Controllers
         private readonly ITelexIntegrationService _loader;
         public TelexIntegrationController(ITelexIntegrationService loader)
         {
-            _loader = loader; 
+            _loader = loader;
         }
 
 
         [HttpGet]
         public IActionResult GetIntegrationConfig()
         {
-            
+
             var integrationJson = _loader.LoadIntegration();
 
             if (integrationJson == null)
@@ -29,16 +29,6 @@ namespace SmartTextSummarizerAgent.Controllers
             return Ok(integrationJson);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> PostIntegrationConfig([FromBody] string text)
-        {
-            var jsonResponse = await _loader.SummarizeText(text);
-
-            if (jsonResponse == null)
-            {
-                return BadRequest(jsonResponse);
-            }
-            return Ok(jsonResponse);
-        }
     }
+       
 }
